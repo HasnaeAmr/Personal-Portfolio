@@ -12,10 +12,10 @@
 }
 body{
     font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  background: linear-gradient(#070a22,#0a0b1e);
-  color: white;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background: linear-gradient(#070a22,#0a0b1e);
+    color: white;
 }
 
 ul{
@@ -81,11 +81,25 @@ header .nvbar ul{
     font-size: 50px;
     margin-bottom: 10px;
 }
-.landing img{
+.landing img {
     width: 400px;
     border-radius: 10px;
-    box-shadow: 0px 15px 57px -7px #ff20d547;
+    position: relative;
+    z-index: 1; /* Ensure the image is behind the pseudo-element */
 }
+
+.landing img::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Set the pseudo-element in front of the image */
+}
+
 
 .landing h3{
     margin-top: 0;
@@ -110,11 +124,11 @@ header .nvbar ul{
     border: 1px solid var(--main-blue);
     color: var(--main-blue);
     font-weight: 600;
-    margin: 20px 0 30px;
-    width: 100px;
+    width: 180px;
     text-align: center;
     border-radius: 5px;
     transform: 0.5s;
+    cursor: pointer;
 }
 .landing .s-container .buttom1:hover,.buttom2:hover{
     border-color: var(--main-pink);
@@ -206,7 +220,7 @@ header .nvbar ul{
 }
 .services .container .pro-skills .card{
     border-radius: 10px;
-    padding : 30px 20px;
+    padding : 30px;
     width: 260px;
     height: 200px;
     background-color: rgba(0, 0, 0, 0.274);
@@ -214,22 +228,27 @@ header .nvbar ul{
     transition: 0.4s;
 }
 
-.services .container .pro-skills .card i{
+.services .container .pro-skills  i{
     font-size: 35px;
     color: var(--main-blue);
 }
 .services .container .pro-skills p{
     font-weight: 200;
     font-size: 13px;
-    color: #eee;
+    margin-top: 10px;
+    padding-bottom: 50px;
 }
 .services .container .pro-skills .card:hover{
     box-shadow: 0px 4px 20px -16px var(--main-pink);
     color: var(--main-pink);
     background-color: #0a0b1e;
+    p{
+        color: white;
+    }
 }
 .services .container .pro-skills h5{
     font-size: 15px;
+    margin-top: 15px;
 }
 /*-------------*/
 
@@ -264,17 +283,24 @@ header .nvbar ul{
  .services2 .container2 span{
      color: var(--main-blue);
  }
- .services2 .container2 .pro-skills2{
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
+ .services2 .container2 .pro-skills2 {
+    display: grid;
+    grid-template-columns: repeat(4, 200px); /* Change column width to use fractional units */
+    gap: 30px;
+    margin-top: -100px;
+    justify-content: space-around; /* Move justify-content property here */
+}
+
+/* Adjust grid column position for the eighth icon */
+.services2 .container2 .pro-skills2 i:nth-child(8) {
+    grid-column-start: 2;
+}
+
  .services2 .container2 .pro-skills2 .card2{
      border-radius: 50px;
      padding : 5px;
      width: 90px;
      height: 90px;
-     margin: -60px 20px;
      background-color: rgba(0, 0, 0, 0.274);
      box-shadow: 0px 2px 20px -19px #1c506d;
      display: flex;
@@ -347,7 +373,7 @@ header .nvbar ul{
  
  .projects .descreption h1{
      font-weight: 800;
-     text-shadow: 0px 0px 10px var(--main-pink); 
+     margin-bottom: 30px;
  }
  .projects .container .project1{
     display: flex;
@@ -363,7 +389,12 @@ header .nvbar ul{
     width: 45%;
  }
  .projects .container .project1 .descreption{
+    padding: 20px;
     max-width: 50%;
+    background: #5170e703;
+    border-left: 5px solid var(--main-blue);
+    background-color: #022533;
+    border-radius: 10px;
  }
  .projects .container .project1 img{
     height: 150px;
@@ -399,7 +430,12 @@ header .nvbar ul{
     width: 45%;
  }
  .projects .container .project2 .descreption{
+    padding: 20px;
     max-width: 50%;
+    background: #5170e703;
+    border-right: 5px solid var(--main-blue);
+    background-color: #022533;
+    border-radius: 10px;
  }
  .projects .container .project2 img{
     width: 150px;
@@ -434,10 +470,10 @@ header .nvbar ul{
     top: -50px;
  }
  .education .description{
-    padding: 10px;
+    padding: 20px;
     max-width: 70%;
-    
- }
+    margin-bottom: 30px;
+}
  .education .container{
     display: grid;
     grid-template-columns: repeat(1,auto);
@@ -451,6 +487,7 @@ header .nvbar ul{
  .education p{
     font-weight: 200px;
     font-weight: 300;
+    margin-top: 20px;
  }
  .education .active{
     box-shadow: 0px 0px 3px 1px var(--main-pink);
@@ -481,12 +518,94 @@ header .nvbar ul{
 .about{
     width: 100%;
     background-color: #0c1035;
-    background-image: url(bg.png);
-    height: 200px;
+    height: 300px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .about .container{
     margin: 0 60px 60px;
     padding: 20px;
-    background-size: auto;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 700px;
+    text-align: center;
+}
+.about-title{
+    padding: 10px;
+    margin: 20px;
+    color: var(--main-blue)
+}
+.about p{
+    margin: 20px;
+    line-height: 1.8;
+    font-weight: 400;
+}
+.contact{
+    padding: 40px 0 40px;
+}
+.contact .container{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.container .title{
+    margin-bottom: 40px;
+    padding: 10px;
+}
+.infos{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: #080b24;
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 4px;
+    color: #fff;
+    transition: 0.3s;
+    box-shadow: 0 15px 10px -19px rgba(8, 12, 49, 0.925);
+}
+input:focus{
+    background-color: #0a0b22;
+    transform: scale(1.009);
+    border-bottom: 1px solid var(--main-blue);
+}
+.msg{
+    height: 150px;
+    overflow: scroll;
+    text-align: start;
+}
+.msg:focus{
+    height: 150px;
+    overflow: scroll;
+    border-left: 1px solid var(--main-blue);
+}
+.contact button{
+    padding: 15px 30px;
+    border: 1px solid var(--main-blue);
+    color: var(--main-blue);
+    font-weight: 600;
+    width: 180px;
+    text-align: center;
+    border-radius: 5px;
+    transform: 0.5s;
+    cursor: pointer;
+    background-color: #080b24;
+    margin-top: 20px;
+}
+.contact button:hover{
+    border-color: var(--main-pink);
+    box-shadow: 0px 1px 10px -5px var(--main-pink);
 }
