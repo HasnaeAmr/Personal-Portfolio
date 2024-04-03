@@ -1,10 +1,27 @@
+
+<?php
+$database = new PDO('mysql:host=localhost;dbname=contacme;charset=utf8', 'root', '');
+
+if(isset($_POST['submit'])){
+    $name = $_POST['fullName'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $msg = $_POST['msg'];
+
+    $query = "INSERT INTO contact(name, email, subject, msg) VALUES ('$name', '$email', '$subject', '$msg')";
+    $database->exec($query);
+    echo "New record created successfully";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>| Hasnae</title>
-    <link rel="stylesheet" href="Style/style.css"> <!-- Corrected the typo -->
+    <link rel="stylesheet" href="Style/style.css?v=1">
+ <!-- Corrected the typo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,13 +262,14 @@
     <div class="contact">
         <div class="container">
             <div class="title"><h1>Contact Me !</h1></div>
-            <form class="infos">
-                <input type="text" placeholder="Object">
-                <input  type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
-                <input class="msg" type="text" placeholder="Your message">
-                <button>Send</button>
-            </form>
+            <form class="infos" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <input class="fullName" type="text" placeholder="Full Name" name="fullName">
+    <input class="email" type="email" placeholder="Email" name="email">
+    <input class="subject" type="text" placeholder="Subject" name="subject">
+    <input class="msg" type="text" placeholder="Your message" name="msg">
+    <input class="submit" type="submit" value="Send" name="submit">
+</form>
+
         </div>
     </div>
     <script src="script.js"></script>
