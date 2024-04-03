@@ -594,3 +594,32 @@ header .nvbar ul{
     overflow: scroll;
     border-left: 1px solid var(--main-blue);
 }
+.resume{
+    margin: auto;
+    margin-top: 150px;
+    background-color: #1c516d94;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.smoothscroll.btn-primary.px-4.py-3 {
+    color: white;
+}
+.resume a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid var(--main-blue);
+    padding: 10px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.resume a:hover{
+    background-color: var(--main-blue);
+    color: #080b24;
+}
