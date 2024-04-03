@@ -98,7 +98,7 @@ header .nvbar ul{
     top: 0;
     left: 0;
     z-index: 2; /* Set the pseudo-element in front of the image */
-}
+}submi
 
 
 .landing h3{
@@ -119,8 +119,9 @@ header .nvbar ul{
     justify-content: space-between;
     align-items: center;
 }
-.landing .s-container .buttom1,.buttom2{
+.landing .s-container .buttom1,.buttom2, .submit{
     padding: 15px 30px;
+    background-color: transparent;
     border: 1px solid var(--main-blue);
     color: var(--main-blue);
     font-weight: 600;
@@ -130,7 +131,8 @@ header .nvbar ul{
     transform: 0.5s;
     cursor: pointer;
 }
-.landing .s-container .buttom1:hover,.buttom2:hover{
+
+.landing .s-container .buttom1:hover,.buttom2:hover, .submit:hover{
     border-color: var(--main-pink);
     box-shadow: 0px 1px 10px 0px var(--main-pink);
 }
@@ -564,7 +566,7 @@ header .nvbar ul{
     justify-content: center;
     align-items: center;
 }
-input{
+.fullName, .email, .subject, .msg{
     width: 100%;
     height: 40px;
     outline: none;
@@ -577,7 +579,7 @@ input{
     transition: 0.3s;
     box-shadow: 0 15px 10px -19px rgba(8, 12, 49, 0.925);
 }
-input:focus{
+.fullName:focus, .email:focus, .subject:focus, .msg:focus{
     background-color: #0a0b22;
     transform: scale(1.009);
     border-bottom: 1px solid var(--main-blue);
@@ -591,21 +593,4 @@ input:focus{
     height: 150px;
     overflow: scroll;
     border-left: 1px solid var(--main-blue);
-}
-.contact button{
-    padding: 15px 30px;
-    border: 1px solid var(--main-blue);
-    color: var(--main-blue);
-    font-weight: 600;
-    width: 180px;
-    text-align: center;
-    border-radius: 5px;
-    transform: 0.5s;
-    cursor: pointer;
-    background-color: #080b24;
-    margin-top: 20px;
-}
-.contact button:hover{
-    border-color: var(--main-pink);
-    box-shadow: 0px 1px 10px -5px var(--main-pink);
 }
