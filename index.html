@@ -1,3 +1,23 @@
+
+<?php
+$database = new PDO('mysql:host=localhost;dbname=contacme;charset=utf8', 'root', '');
+
+if(isset($_POST['submit'])){
+    /*$name = htmlspecialchars(strtolower(trim($_POST['fullName'])));
+    $email = htmlspecialchars(strtolower(trim($_POST['email'])));
+    $subject = htmlspecialchars(strtolower(trim($_POST['subject'])));
+    $msg = htmlspecialchars(strtolower(trim($_POST['msg'])));*/
+
+    $name = filter_var($_POST['fullName'],FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+    $subject = filter_var($_POST['subject'],FILTER_SANITIZE_STRING);
+    $msg = filter_var($_POST['msg'],FILTER_SANITIZE_STRING);
+
+    $query = "INSERT INTO contact(name, email, subject, msg) VALUES ('$name', '$email', '$subject', '$msg')";
+    $database->exec($query);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +34,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lepcha&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lepcha&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
-    <header>
+    <header id="head">
         <div class="container">
             <div class="img">
                 <img src="Style/H_A-removebg-preview.png">
             </div>
             <div class="nvbar">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#head">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#Ptojects">Projects</a></li>
+                    <li><a href="#Education">Education</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -56,7 +76,7 @@
                 <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
     </div>
     </div>
-    <div class="services">
+    <div class="services" id="skills">
         <div class="container">
             <h1 class="skill">Skills</h1>
             <h1 class="title">Prfessional</h1>
@@ -170,7 +190,7 @@
                 
         </div>
     </div>
-    <div class="projects">
+    <div class="projects" id="Projects">
         <div class="container">
             <h1 class="projects-tite">Projects</h1>
             <div class="project1">
@@ -207,7 +227,7 @@ on data.</li>
                 </div>
         </div>
     </div>
-    <div class="education">
+    <div class="education" id="Education">
         <h1 class="skill">Academic</h1>
         <h1 class="title">Education</h1>
         <div class="container">
@@ -250,14 +270,14 @@ on data.</li>
             </div>
         </div>
     </div>
-    <div class="about">
+    <div class="about" id="About">
         <div class="container">
             <h1 class="about-title">About</h1>
             <p>Currently in my first year of Computer Engineering studies, 
                 I embody a blend of responsibility, adept problem-solving skills, and an unyielding passion for learning. These qualities converge to drive my pursuit of invaluable professional experience</p>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" id="Contact">
         <div class="container">
             <div class="titlecon"><h1>Contact Me !</h1></div>
             <form class="infos" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
