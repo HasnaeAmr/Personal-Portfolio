@@ -98,23 +98,22 @@ header .nvbar ul{
     top: 0;
     left: 0;
     z-index: 2; /* Set the pseudo-element in front of the image */
-}submi
-
-
+}
 .landing h3{
     margin-top: 0;
     color: var(--main-blue);
-    font-weight: 800;
-    font-size: 30px;
+    font-weight: 700;
+    font-size: 25px;
 }
 .landing p{
     color: #eee;
-    font-weight: 400;
-    line-height: 1.5;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 35px 0 40px;
 }
 .landing .container .s-container{
     display: flex;
-    margin-top: 20px;
+    margin: 10px 0;
     max-width: 55%;
     justify-content: space-between;
     align-items: center;
@@ -142,7 +141,8 @@ header .nvbar ul{
     justify-content: space-between;
     position: relative;
     bottom: 60px;
-    width: 90px;
+    width: 130px;
+    padding-top: 20px;
 }
 .landing .links a{
     position: relative;
