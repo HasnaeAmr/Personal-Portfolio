@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -188,7 +189,7 @@ header .nvbar ul{
     height: 100vh;
 }
 
-.services .container .title{
+.title{
     position: relative;
     font-weight: 900;
     font-size: 64px;
@@ -198,7 +199,7 @@ header .nvbar ul{
     padding: 0;
     top: -190px;
 }
-.services .skill{
+.skill{
     font-size: 175px;
     padding: 0;
     margin: 0;
@@ -461,16 +462,7 @@ header .nvbar ul{
     width: 100%;
     position: relative;
 }
-.education .title{
-    position: relative;
-    font-weight: 900;
-    font-size: 74px;
-    text-align: center;
-    text-shadow: -2px 0px 5px var(--main-pink);
-    margin: 0;
-    padding: 0;
-    top: -50px;
- }
+
  .education .description{
     padding: 20px;
     max-width: 70%;
@@ -479,17 +471,22 @@ header .nvbar ul{
  .education .container{
     display: grid;
     grid-template-columns: repeat(1,auto);
-    margin: 0 60px 60px;
+    margin: -80px 60px 60px;
  }
  .education h3{
     font-weight: 700;
     font-size: 30px;
     color: var(--main-blue);
  }
+ .education h4{
+    font-weight: 500;
+    color: #eee;
+ }
  .education p{
-    font-weight: 200px;
-    font-weight: 300;
+    font-weight: 200;
+    font-size: 15px;
     margin-top: 20px;
+    line-height: 1.7;
  }
  .education .active{
     box-shadow: 0px 0px 3px 1px var(--main-pink);
@@ -554,7 +551,7 @@ header .nvbar ul{
     margin: auto;
     text-align: center;
 }
-.container .title{
+.contact .titlecon{
     margin-bottom: 40px;
     padding: 10px;
 }
