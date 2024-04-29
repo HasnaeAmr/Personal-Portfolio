@@ -119,7 +119,7 @@ header .nvbar ul{
     justify-content: space-between;
     align-items: center;
 }
-.landing .s-container .buttom1,.buttom2, .submit{
+.landing .s-container,.buttom2, .submit{
     padding: 15px 30px;
     background-color: transparent;
     border: 1px solid var(--main-blue);
@@ -131,10 +131,13 @@ header .nvbar ul{
     transform: 0.5s;
     cursor: pointer;
 }
-
-.landing .s-container .buttom1:hover,.buttom2:hover, .submit:hover{
+.landing .s-container a{
+        color: var(--main-blue);
+    }
+.landing .s-container, .buttom2:hover, .submit:hover{
     border-color: var(--main-pink);
     box-shadow: 0px 1px 10px 0px var(--main-pink);
+    
 }
 .landing .links{
     margin-left: 70px;
