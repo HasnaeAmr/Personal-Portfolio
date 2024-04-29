@@ -1,23 +1,3 @@
-
-<?php
-$database = new PDO('mysql:host=localhost;dbname=contacme;charset=utf8', 'root', '');
-
-if(isset($_POST['submit'])){
-    /*$name = htmlspecialchars(strtolower(trim($_POST['fullName'])));
-    $email = htmlspecialchars(strtolower(trim($_POST['email'])));
-    $subject = htmlspecialchars(strtolower(trim($_POST['subject'])));
-    $msg = htmlspecialchars(strtolower(trim($_POST['msg'])));*/
-
-    $name = filter_var($_POST['fullName'],FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-    $subject = filter_var($_POST['subject'],FILTER_SANITIZE_STRING);
-    $msg = filter_var($_POST['msg'],FILTER_SANITIZE_STRING);
-
-    $query = "INSERT INTO contact(name, email, subject, msg) VALUES ('$name', '$email', '$subject', '$msg')";
-    $database->exec($query);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
