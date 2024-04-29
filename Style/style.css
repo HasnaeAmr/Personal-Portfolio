@@ -131,9 +131,9 @@ header .nvbar ul{
     transform: 0.5s;
     cursor: pointer;
 }
-.landing .s-container a{
-        color: var(--main-blue);
-    }
+.buttom2 a{
+    color: var(--main-blue);
+}
 .landing .s-container, .buttom2:hover, .submit:hover{
     border-color: var(--main-pink);
     box-shadow: 0px 1px 10px 0px var(--main-pink);
