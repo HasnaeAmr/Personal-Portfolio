@@ -10,18 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lepcha&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init('KYdl5kqfD4ccMMruc');
-        })();
-    </script>
 </head>
+    <a href="#head" class="upScroll"><i class="fa-solid fa-chevron-up"></i></a>
     <header id="head">
         <div class="container">
             <div class="img">
-                <img src="Style/H_A-removebg-preview.png">
+                <img src="Style/H_A-removebg-preview.png" alt="Logo">
             </div>
             <div class="nvbar">
+                <div class="slide-bar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul>
                     <li><a href="#head">Home</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -47,25 +48,25 @@
                 </div>
             </div>
             <div class="image">
-                <img src="Style/landing img.jpeg">
+                <img src="Style/landing img.jpeg" alt="Landing image">
             </div>
             </div>
             <div class="links">
                 <a href="https://github.com/HasnaeAmr"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/hasna-amarmach-901b13262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> <i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:amarmachhasna22@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     </div>
     </div>
     <div class="services" id="skills">
         <div class="container">
             <h1 class="skill">Skills</h1>
-            <h1 class="title">Prfessional</h1>
+            <h1 class="title">Professional</h1>
             <div class="pro-skills">
                 <div class="card">
                     <div class="icon">
                         <i class="fa-solid fa-code"></i>
                     </div>
-                    <h5>Front-End Develoment</h4>
+                    <h5>Front-End Develoment</h5>
                     <p>Design and craft responsive user interfaces for websites, ensuring seamless interaction and intuitive navigation.</p>
                 </div>
                 <div class="card">
@@ -115,11 +116,10 @@
                     <div class="icon2">
                         <i class="fa-brands fa-java"></i>
                     </div>
-                 </div>
+                </div>
                 <div class="card2">
                     <div class="icon2">
-                        <i class="fab fa-cuttlefish"></i>
-                        <span>++</span>
+                        <i class="fab fa-cuttlefish"></i><span>++</span>
                     </div>
                 </div>
                 <div class="card2">
@@ -160,16 +160,14 @@
                 <div class="card2">
                     <div class="icon2">
                         <i class="fa-brands fa-react"></i>
-                 </div>
-            </div>
-                
-            </div>
-                
+                    </div>
+                </div> 
+            </div>     
         </div>
     </div>
     <div class="projects" id="Projects">
         <div class="container">
-            <h1 class="projects-tite">Projects</h1>
+            <h1 class="projects-title">Projects</h1>
             <div class="project1">
                 <div class="descreption">
                     <h1>Digitized Internship Reports</h1>
@@ -191,7 +189,7 @@
                         <li>Developed a Java desktop application for dental clinic
 management.</li>
                         <li>Utilized JavaFX for the user interface and JDBC for
-database connectivity.</li>
+database connectivity.<br>In Progress ...</li>
                     </ul>
                         
                 </div>
@@ -209,7 +207,7 @@ database connectivity.</li>
             
             <div class="it-student">
                 <div class="description">
-                    <h3>1st Year Engineering Cycle - Coputer Science</h3>
+                    <h3>2nd Year Engineering Cycle - Coputer Science</h3>
                     <h4>2023 - present</h4>
                     <p>Embarking on the journey to fulfill the dream of studying software engineering at National Schools of Applied Sciences in AGADIR, where the fundamentals of programming, the intricacies of data structures, and the elegance of algorithms await exploration. With a passion for problem-solving and an appetite for innovation, each challenge presents an opportunity to grow and excel in this dynamic field.</p>
                 </div>
@@ -221,7 +219,7 @@ database connectivity.</li>
             </div>
             <div class="cp2">
                 <div class="description">
-                <h3>Prepatory Cycle</h3>
+                <h3>Preparatory Cycle</h3>
                 <h4>2021 - 2023</h4>
                 <p>The preparatory cycle focuses on fostering strong analytical and logical thinking skills through the exploration of various subjects. Mathematics serves as a platform for sharpening problem-solving abilities and logical reasoning. Languages and literature play a role in broadening perspectives and refining critical thinking skills. </p>
                 </div>
@@ -235,8 +233,8 @@ database connectivity.</li>
                 <div class="description">
                 <h3>Baccalurriat - Physical Science</h3>
                 <h4>2020 - 2021</h4>
-
-                <p>Embark on the journey in mathematics and physics, concentrating on establishing fundamental knowledge. Begin by exploring the basics of algebra, calculus, geometry, and classical mechanics.</p>                </div>
+                <p>Embark on the journey in mathematics and physics, concentrating on establishing fundamental knowledge. Begin by exploring the basics of algebra, calculus, geometry, and classical physics.</p>
+            </div>
                 <div class="line">
                     <div></div>
                     <div></div>
@@ -258,7 +256,7 @@ database connectivity.</li>
                 <input class="fullName" type="text" placeholder="Full Name" name="fullName" id="fullName" required>
                 <input class="email" type="email" placeholder="Email" name="email" id="email" required>
                 <input class="subject" type="text" placeholder="Subject" id="subject" name="subject" required>
-                <input class="msg" type="text" placeholder="Your message" id="msg" name="msg" required>
+                <textarea class="msg" placeholder="Your message ..." id="msg" name="msg" required></textarea>
                 <input class="submit" onclick="sendMail()" type="button" value="Send">
             </form>
     </div>
@@ -267,7 +265,7 @@ database connectivity.</li>
     <footer>
         <div class="resume">
             <a href="Documents/Hasna Amarmach.pdf" target="_blank">View Resume</a>
-            <p>&copy; 2024 Hasna Amarmach. All rights reserved.</p>
+            <p>&copy; 2023 Hasna Amarmach. All rights reserved.</p>
         </div>
     </footer>
           
