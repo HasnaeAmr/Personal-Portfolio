@@ -438,7 +438,7 @@ header .nvbar ul{
      text-shadow: -2px 0px 5px var(--main-blue);
  }
  .projects .container{
-    margin: 0 60px 60px;
+    margin: 0 60px;
      padding-bottom: 100px;
  }
  .projects .skill{
@@ -488,7 +488,7 @@ header .nvbar ul{
     border: 1px solid var(--main-blue);
     border-radius: 5px;
     position: relative;
-    margin: 10px;
+    margin: 10px 10px 50px;
  }
  .projects .container  .img1{
     position: relative;
@@ -546,7 +546,7 @@ header .nvbar ul{
     width: 100%;
 }
 
- .education .description{
+.education .description{
     padding: 20px;
     max-width: 70%;
     margin-bottom: 30px;
@@ -554,7 +554,7 @@ header .nvbar ul{
  .education .container{
     display: grid;
     grid-template-columns: repeat(1,auto);
-    margin: -80px 60px 60px;
+    margin: -120px 60px 60px;
  }
  .education h3{
     font-weight: 700;
