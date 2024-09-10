@@ -1,23 +1,30 @@
-*{
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-
-:root{
-   /* --main-blue: #3eb9ff;*/
+:root {
     --main-blue: #00abf0;
     --main-pink: #ff20d5;
 }
-body{
+
+body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background: linear-gradient(#070a22,#0a0b1e);
+    background: linear-gradient(#070a22, #0a0b1e);
     color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
+
 
 ul{
     list-style: none;
@@ -25,13 +32,7 @@ ul{
 a{
     text-decoration: none;
 }
-a:link {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-  }
+
 header{
     width: 100%;
     position: relative;
@@ -60,6 +61,72 @@ header .nvbar ul{
 .nvbar a:hover{
     color: var(--main-blue);
 }
+.slide-bar-btn{
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid var(--main-blue);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.slide-bar-btn span{
+    width: 80%;
+    height: 1px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.slide-bar-btn:hover{
+    border-color: #39c7ff;
+}
+@media (max-width: 1024px), (max-width: 768px){
+    header .nvbar ul{
+        display: none;
+    }
+    header .container{
+        padding: 10px 40px;
+    }
+    .landing .container .image{
+        display: none;
+    }
+    .landing{
+        margin: 0 40px 40px;
+    }
+    .landing .container{
+        text-align: center;
+        width: 1500px;
+        margin: 0 10px;
+    }
+    .landing .text{
+        width: 0 20px;
+        margin: auto;
+    }
+    .landing h1{
+        font-weight: 100;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .landing h3{
+        margin-top: 0;
+        color: var(--main-blue);
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .landing p{
+        color: #eee;
+        font-weight: 300;
+        line-height: 1.8;
+        margin: 30px 0 25px;
+    }
+
+}
+
 .landing{
     width: 100%;
     padding-bottom: 40px;
@@ -81,22 +148,22 @@ header .nvbar ul{
     margin-bottom: 10px;
 }
 .landing img {
+    position: relative;
+    z-index: 1; 
     width: 400px;
     border-radius: 10px;
-    position: relative;
-    z-index: 1; /* Ensure the image is behind the pseudo-element */
 }
 
 .landing img::after {
     content: '';
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2; /* Set the pseudo-element in front of the image */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 2; 
 }
 .landing h3{
     margin-top: 0;
@@ -174,8 +241,7 @@ header .nvbar ul{
     width: 100%;
     position: relative;
     background-color: #19425834;
-    padding-bottom: 10px;
-     /* Set a higher z-index on the parent element */
+    padding-bottom: 60px;
 }
 
 /*.services::after {
@@ -228,10 +294,11 @@ header .nvbar ul{
     justify-content: center;
     align-items: center;
     margin-top: -120px;
+    padding-bottom: 30px;
 }
 .services .container .pro-skills .card{
     border-radius: 10px;
-    padding : 30px;
+    padding : 25px;
     width: 260px;
     height: 200px;
     background-color: rgba(0, 0, 0, 0.274);
@@ -263,7 +330,11 @@ header .nvbar ul{
 }
 /*-------------*/
 
-
+.services2{
+    width: 100%;
+    position: relative;
+    margin-bottom: -60px;
+}
 .services2 .container2{
     margin: 0 60px 60px;
     padding-bottom: 100px;
@@ -346,13 +417,13 @@ header .nvbar ul{
  .projects{
     width: 100%;
     position: relative;
-    margin: 60px 0;
+    margin: 0;
     background-color: #0d212c80;
  }
- .projects .projects-tite{
+ .projects .projects-title{
     font-size: 150px;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom: 25x;
     text-align: center;
     color: #080b24;
     font-weight: 900;
@@ -395,7 +466,7 @@ header .nvbar ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 150px;
+    margin-bottom: 110px;
  }
  .projects .container .project1 .images-projet1{
     display: flex;
@@ -436,7 +507,7 @@ header .nvbar ul{
     align-items: center;
     padding: 0;
     margin: 0;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
  }
  .projects .container .project2 .images-projet2{
     display: flex;
@@ -593,16 +664,38 @@ header .nvbar ul{
     transform: scale(1.009);
     border-bottom: 1px solid var(--main-blue);
 }
-.msg{
+.msg {
     height: 150px;
-    overflow: scroll;
+    overflow-y: auto; 
+    overflow-x: hidden;
     text-align: start;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    box-shadow: 0 15px 10px -19px rgba(8, 12, 49, 0.925);
+    resize: vertical; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-.msg:focus{
-    height: 150px;
-    overflow: scroll;
-    border-left: 1px solid var(--main-blue);
+.msg::-webkit-scrollbar {
+    width: 6px;
 }
+
+.msg::-webkit-scrollbar-track {
+    background-color:  #080b24;
+}
+.msg::-webkit-scrollbar-thumb {
+    background: #0b0f3f;
+    border-radius: 60px; 
+    cursor: default;
+}
+
+.msg::-webkit-scrollbar-thumb:hover {
+    background: #02376f; 
+}
+
 
 footer{
     margin-bottom: 0;
@@ -630,12 +723,63 @@ footer .resume{
     display: inline-block;
     text-decoration: none;
     color: white;
-    border: 1px solid var(--main-blue);
-    padding: 10px;
-    border-radius: 30px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 .resume a:hover{
-    background-color: #1c516d94;
-    color: white;
+    font-weight: 400;
+    color: var(--main-blue);
+}
+.upScroll {
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 51, 102, 0.9);
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 12px;
+    z-index: 1000; 
+    cursor: pointer;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: background 0.3s ease, box-shadow 0.3s ease; 
+    animation: fade 3s infinite; 
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.upScroll:hover {
+    background: rgba(0, 51, 102, 0.8); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); 
+    color: #ffffff; 
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color:  #080b24;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#111976, #034d9c);
+    border-radius: 60px; 
+    cursor: default;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#0f1767, #03458b); 
 }
