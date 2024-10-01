@@ -783,3 +783,23 @@ footer .resume{
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(#0f1767, #03458b); 
 }
+
+
+/* Disable portfolio only for desktop devices (screens wider than 1024px) */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: none;
+    pointer-events: none; /* Disable interaction */
+  }
+
+  body::before {
+    content: "Portfolio is temporarily unavailable on desktop. Please check back later.";
+    display: block;
+    color: red;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 100px;
+    pointer-events: auto; /* Ensure the message is visible */
+  }
+}
+
